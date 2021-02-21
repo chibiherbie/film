@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>!ФИЛЬМ!</title>
 </head>
 <body>
-    <h1>fffff</h1>
-    <video width="100%" height="100%" controls autoplay>
-        <source src={{ url_for('static', filename="video/1.mp4") }} type="video/mp4">
+    <video width="95%" height="95%" autoplay="autoplay" preload="metadata" controls>
+        <source src=data/video/{{file}} type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </body>
