@@ -17,3 +17,6 @@ class DataBase:
     def check_id(self, id):
         res = self.cur.execute('''SELECT id_user FROM game WHERE id_user = ?''', (id, )).fetchall()
         return bool(len(res))
+
+    def get_info(self):
+        return self.cur.execute('''SELECT choice FROM game''').fetchall()
