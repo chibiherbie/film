@@ -10,18 +10,22 @@ dp = Dispatcher(bot)
 logging.basicConfig(level=logging.INFO)
 
 bd = DataBase('data/user.db')
-bd.clear()
+bd.clear()  # очищаем бд
 
 
+# приветственное слово
 @dp.message_handler(commands=['start'])
 async def hi(message: types.Message):
     await message.answer('Привет! Добро пожаловать. Следи за игрой и успевай отправлять ответы')
 
 
+# обработка сообщений
 @dp.message_handler(content_types=['text'])
 async def said(message: types.Message):
-    if not bd.check_id(message.from_user.id):
-        bd.new_user(message.from_user.id, message.text)
+    if '1' != message.text and '2' != message.text and '3' != message:
+        await message.answer('Такого варианта ответа нет')
+    elif not bd.check_id(message.from_user.id):
+        bd.new_user(message.from_user.id, message.text)  # заносим id в бд для защиты от спама ответов
         await message.answer('Ваш ответ засчитан')
     else:
         await message.answer('Вы уже ответили')
@@ -29,4 +33,3 @@ async def said(message: types.Message):
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
-
