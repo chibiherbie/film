@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>!ФИЛЬМ!</title>
+    <script type="text/javascript" src="data/jquery.js"></script>
 </head>
 <body>
-    <video width="95%" height="95%" autoplay="autoplay" preload="metadata" controls>
+    <div id="content">{{text}}</div>
+    <video id="vid" width="95%" height="95%" autoplay="autoplay" preload="metadata" controls>
         <source src=data/video/{{file}} type="video/mp4">
-        Your browser does not support the video tag.
     </video>
+    <!--
+    <script>
+        function show()
+        {
+            type: 'POST',
+            data: myJsonString, // JASON object passed to flask
+            url: '/something',
+            contentType: "application/json",
+            method: 'POST',
+            success: function(response) {
+                # If we succed we make a request to get the template
+                window.location.href = "/update";
+                # With this line we are making a simple GET request to Flask and the template returned is opened in the current window
+        }
+        }
+
+        $(document).ready(function(){
+            show();
+            setInterval('show()', 5000);
+        });
+
+    </script>
+    -->
 </body>
 </html>
