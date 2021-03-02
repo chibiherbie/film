@@ -2,8 +2,6 @@ from time import sleep
 from sqlite import DataBase
 from random import choice
 from moviepy.editor import VideoFileClip
-from video_site import base
-from video_site import app
 
 # def check_comand():
 #     while True:
@@ -38,31 +36,13 @@ def count():
             inf[choice([a, inf_c.index(max(inf_c))])] += 1
 
 
-print('идёт фильм')
-print('выбор')
-
-
-
 # узнаем длительность
 def get_lenght(file_num):
-    file = f'video/{file_num}.mp4'
+    file = f'data/video/{file_num}.mp4'
     clip = VideoFileClip(file)
     return clip.duration
 
+
+# мутим паузу
 def make_pause(duration):
     sleep(duration)
-
-# id = count()
-id = 2
-if id == 1:
-    base(file_num=1, text=1)
-    duration = get_lenght(1)
-    make_pause(duration)
-    print('бежим на право')
-elif id == 2:
-    base(file_num=2)
-    duration = get_lenght(2)
-    make_pause(duration)
-    print('бежим на лево')
-else:
-    print('АААААААА')
