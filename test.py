@@ -26,7 +26,10 @@ class VideoPlayer:
 
     def check(self):
         print('DADA')
-
+t = [1, 2, 3, 4]
+res = list(map(str, t))
+res.append(str(5))
+print('|'.join(res))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

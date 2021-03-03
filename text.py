@@ -6,7 +6,9 @@ from random import choice
 
 def write(file):
     with open('connect.txt', 'w', encoding='utf8') as f:
-        f.write(str(file))
+        res = list(map(str, count()))
+        res.append(str(file))
+        f.write('|'.join(res))
 
 
 def get_lenght(file_num):
@@ -23,7 +25,7 @@ def count():
 
     while True:
         if inf.count(max(inf)) != 2:
-            return inf.index(max(inf)) + 1
+            return inf.index(max(inf)) + 1, inf[0], inf[1], inf[2]
         else:
             inf_c = inf.copy()
             a = inf.index(max(inf))
