@@ -3,6 +3,14 @@ from sqlite import DataBase
 from random import choice
 from moviepy.editor import VideoFileClip
 
+from PyQt5.QtGui import QIcon, QFont
+from PyQt5.QtCore import QDir, Qt, QUrl, QSize
+from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
+from PyQt5.QtMultimediaWidgets import QVideoWidget
+from PyQt5.QtWidgets import (QApplication, QFileDialog, QHBoxLayout, QLabel,
+                             QPushButton, QSizePolicy, QSlider, QStyle, QVBoxLayout, QWidget, QStatusBar)
+import os
+
 # def check_comand():
 #     while True:
 #         with open('connect.txt', 'r', encoding='utf8') as f:
@@ -46,3 +54,90 @@ def get_lenght(file_num):
 # мутим паузу
 def make_pause(duration):
     sleep(duration)
+
+
+class VideoPlayer(QWidget):
+    def __init__(self, parent=None):
+        super(VideoPlayer, self).__init__(parent)
+
+        self.mediaPlayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)
+
+        videoWidget = QVideoWidget()
+        #самое главное!
+
+        controlLayout = QHBoxLayout()
+        controlLayout.setContentsMargins(0, 0, 0, 0)
+
+        layout = QVBoxLayout()
+        layout.addWidget(videoWidget)
+        layout.addLayout(controlLayout)
+
+        self.setLayout(layout)
+
+        self.mediaPlayer.setVideoOutput(videoWidget)
+        self.mediaPlayer.error.connect(self.handleError)
+
+        #self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/2.mp4')
+        #self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/1.mp4')
+
+    def abrir(self, file):
+
+        fileName = file
+        print(QUrl.fromLocalFile(fileName))
+
+        if fileName != '':
+            self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))# путь до файла
+            self.mediaPlayer.play()
+    '''
+    def play(self):
+        if self.mediaPlayer.state() == QMediaPlayer.PlayingState:
+            self.mediaPlayer.pause()
+        else:
+            self.mediaPlayer.play()
+    '''
+
+    def handleError(self):
+        print("Error: " + self.mediaPlayer.errorString())
+
+    def make_scene(self, file_num):
+        file = os.path.dirname(os.path.abspath(f'{file_num}.mp4'))
+        self.abrir(f'{file}/data/video/{file_num}.mp4')
+
+    def base(self):
+        print('идёт фильм')
+        print('выбор')
+        # id = count()
+        id = 2
+        if id == 1:
+            self.make_scene(1)
+            duration = get_lenght(1)
+            make_pause(duration)
+            print('бежим на право')
+        elif id == 2:
+            self.make_scene(2)
+            # self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/2.mp4')
+            duration = get_lenght(2)
+            make_pause(3)
+            print('бежим на лево')
+        id = 1
+        if id == 1:
+            self.make_scene(1)
+            duration = get_lenght(1)
+            make_pause(3)
+            print('бежим на право')
+        elif id == 2:
+            self.make_scene(2)
+            duration = get_lenght(2)
+            make_pause(3)
+            print('бежим на лево')
+
+
+if __name__ == '__main__':
+    import sys
+    app = QApplication(sys.argv)
+    player = VideoPlayer()
+    player.setWindowTitle("Player")
+    player.resize(600, 400)
+    player.show()
+    player.base()
+    sys.exit(app.exec_())
