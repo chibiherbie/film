@@ -6,7 +6,7 @@ import os
 print(os.path.abspath('1.mp4'))
 import cv2
 from ffpyplayer.player import MediaPlayer
-video_path="/Users/alekseyostrovskiy/Desktop/film/data/video/2.mp4"
+video_path="/Users/alekseyostrovskiy/Desktop/film/data/video/zoom_0.mp4"
 def PlayVideo(video_path):
     video=cv2.VideoCapture(video_path)
     player = MediaPlayer(video_path)
@@ -16,7 +16,7 @@ def PlayVideo(video_path):
         if not grabbed:
             print("End of video")
             break
-        if cv2.waitKey(25) & 0xFF == ord("q"):
+        if cv2.waitKey(24) & 0xFF == ord("q"):
             break
         cv2.imshow("Video", frame)
         if val != 'eof' and audio_frame is not None:
