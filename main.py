@@ -34,8 +34,8 @@ class VideoPlayer(QWidget):
 
         self.videoWidget = QVideoWidget()
 
-        self.timer=QTimer()
-        self.timer.timeout.connect(self.showTime)
+        # self.timer=QTimer()
+        # self.timer.timeout.connect(self.showTime)
         #самое главное!
 
         controlLayout = QHBoxLayout()
@@ -50,11 +50,25 @@ class VideoPlayer(QWidget):
         self.mediaPlayer.setVideoOutput(self.videoWidget)
         self.mediaPlayer.error.connect(self.handleError)
 
-
+        # ТАЙМЕР
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.check)
+        self.timer.start(1000)
 
         #self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/2.mp4')
         #self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/1.mp4')
 
+    def check(self):
+        with open('connect.txt', 'r', encoding='utf8') as f:
+            text = f.read()  # [str(i) for i in f.read().split('|')]
+
+        if text:
+            fileName = get_path(2)
+            self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
+            self.mediaPlayer.play()
+
+        with open('connect.txt', 'w', encoding='utf8') as f:
+            f.write('')
 
     def abrir(self, file):
         fileName = file
@@ -130,14 +144,13 @@ def count():
 
             # делаем +1 на одно из макс знач
             inf[choice([a, inf_c.index(max(inf_c))])] += 1
+
 # узнаем длительность
 def get_lenght(file_num):
     file = f'data/video/{file_num}.mp4'
     clip = VideoFileClip(file)
     return clip.duration
 # мутим паузу
-
-
 
 
 def make_pause(duration):
