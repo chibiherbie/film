@@ -6,7 +6,7 @@ from random import choice
 
 def write(file):
     with open('connect.txt', 'w', encoding='utf8') as f:
-        f.write(file)
+        f.write(str(file))
 
 
 def get_lenght(file_num):
@@ -40,33 +40,18 @@ write(1)
 print('выбор')
 sleep(get_lenght(1))
 
-id = count()
-
+# id = count()
+id = 1
 if id == 1:
     write(2)
     sleep(get_lenght(2))
     print('бежим направо')
 elif id == 2:
-    fileName = get_path(2)
-    self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
-    self.mediaPlayer.play()
-    # self.make_scene(2)
-    # self.abrir('/Users/alekseyostrovskiy/Desktop/film/data/video/2.mp4')
-    duration = get_lenght(2)
-    make_pause(3)
     print('бежим налево')
-id = 1
+id = 2
 if id == 1:
-    fileName = get_path(5)
-    self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
-    self.mediaPlayer.play()
-    # self.make_scene(5)
-    duration = get_lenght(5)
-    make_pause(3)
-    self.make_scene(2)
     print('бежим направо')
 elif id == 2:
-    self.make_scene(2)
-    duration = get_lenght(2)
-    make_pause(3)
+    write(5)
+    sleep(get_lenght(5))
     print('бежим налево')
