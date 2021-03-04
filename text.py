@@ -9,6 +9,8 @@ def write(file):
         res = list(map(str, count()))
         res.append(str(file))
         f.write('|'.join(res))
+        with open('connect2.txt', 'w', encoding='utf8') as f2:
+            f2.write('|'.join(res)) # записываем в коннект 2 и пусть от туда проверяет бот
     bd.clear()
 
 
@@ -42,26 +44,104 @@ def count():
 bd = DataBase('data/user.db')
 
 print('идёт фильм')
-write(3)
+write(1)
 print('выбор')
-sleep(get_lenght(3))
-# write(2)
-# sleep(get_lenght(2))
-
+sleep(get_lenght(1))
+write(2)
+sleep(get_lenght(2))
+#вход в кабинет
+id = count()[0]
+print('id', id)
+if id == 1:
+    write(4)
+    sleep(get_lenght(4))
+    print('привет')
+elif id == 2:
+    write(3)
+    sleep(get_lenght(3))
+    print('здарова бандиты')
+elif id == 3:
+    write(5)
+    sleep(get_lenght(5))
+    print('я вернулся с результатом')
+#разговор с алонзо
 id = count()[0]
 print('id', id)
 if id == 1:
     write(6)
     sleep(get_lenght(6))
-    print('бежим направо')
+    print('как у вас дела?')
+    id = count()[0]
+    if id == 1:
+        write(8)
+        sleep(get_lenght(8))
+        print('промолчать')
+    elif id == 2:
+        write(10)
+        sleep(get_lenght(10))
+        print('тогда продолжу')
+        id = count()[0]
+        if id == 1:
+            write(11)
+            sleep(get_lenght(11))
+            print('так можно было чтоли')
+        elif id == 2:
+            write(12)
+            sleep(get_lenght(12))
+            print('почему же')
 elif id == 2:
     write(7)
     sleep(get_lenght(7))
-    print('бежим налево')
-id = count()
+    print('зачем вам эти документы?')
+    id = count()[0]
+    if id == 1:
+        write(11)
+        sleep(get_lenght(11))
+        print('так можно было чтоли')
+    elif id == 2:
+        write(12)
+        sleep(get_lenght(12))
+        print('почему же')
+# спустя пару дней
+write(14)
+sleep(get_lenght(14))
+id = count()[0]
 if id == 1:
-    print('бежим направо')
+    write(16)
+    sleep(get_lenght(16))
+    print('можно маме позвонить?')
 elif id == 2:
-    write(5)
-    sleep(get_lenght(5))
-    print('бежим налево')
+    write(15)
+    sleep(get_lenght(15))
+    print('так точно')
+elif id == 3:
+    write(17)
+    sleep(get_lenght(17))
+    print('оружие будет?')
+# заброшка
+write(18)
+sleep(get_lenght(18))
+id = count()[0]
+if id == 1:
+    write(19)
+    sleep(get_lenght(19))
+    print('стоять')
+elif id == 2:
+    write(20)
+    sleep(get_lenght(20))
+    print('бежать')
+'''struct
+id = count()[0]
+if id == 1:
+    write(n)
+    sleep(get_lenght(n))
+    print('')
+elif id == 2:
+    write(n)
+    sleep(get_lenght(n))
+    print('')
+elif id == 3:
+    write(n)
+    sleep(get_lenght(n))
+    print('')
+'''

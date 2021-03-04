@@ -62,7 +62,7 @@ class VideoPlayer(QWidget):
             fileName = get_path(int(text[-1]))
             self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
             self.mediaPlayer.play()
-
+        '''
         if text[0] == 1:
             self.label.setText('Победил первый вариант.')
             if text[1]:
@@ -89,7 +89,7 @@ class VideoPlayer(QWidget):
                 self.var_2.setText(text[2])
             if text[3]:
                 self.var_3.setText(text[3])
-
+        '''
         with open('connect.txt', 'w', encoding='utf8') as f:
             f.write('')
 
