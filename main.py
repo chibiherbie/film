@@ -117,15 +117,17 @@ def count():
 
 # узнаем длительность
 def get_lenght(file_num):
-    file = f'data/video/{file_num}.mp4'
+    # file = f'data/video/{file_num}.mp4'
+    file = f'/Volumes/Untitled/video/{file_num}.mp4'
     clip = VideoFileClip(file)
     return clip.duration
 
 
 # получаем путь
 def get_path(file_num):
-    file = os.path.dirname(os.path.abspath(f'{file_num}.mp4'))
-    return f'{file}/data/video/{file_num}.mp4'
+    # file = os.path.dirname(os.path.abspath(f'{file_num}.mp4'))
+    # return f'{file}/data/video/{file_num}.mp4'
+    return f'/Volumes/Untitled/video/{file_num}.mp4'
 
 
 if __name__ == '__main__':
