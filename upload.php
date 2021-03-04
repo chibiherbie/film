@@ -1,1 +1,0 @@
-<?php move_uploaded_files($_FILES['video']['data/video'], '1.mp4');?>

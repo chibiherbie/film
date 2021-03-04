@@ -34,24 +34,32 @@ class VideoPlayer(QWidget):
         self.timer = QTimer()
         self.timer.timeout.connect(self.check)
         self.timer.start(1000)
+        '''
         # ТЕКСТ
         self.label = QLabel(self)
         self.label.setText("Шоу начинается")
+        self.resize(199, 200)
         # ГОЛОСОВАНИЕ
         self.var_1 = QLabel(self)
-        self.label.setText("")
+        self.var_1.setText("")
+        self.var_1.setStyleSheet("QLabel {color : white; }")
+        self.var_1.move(100, 100)
         self.var_2 = QLabel(self)
-        self.label.setText("")
+        self.var_2.setText("")
+        self.var_2.setStyleSheet("QLabel {color : white; }")
+        self.var_2.move(200, 100)
         self.var_3 = QLabel(self)
-        self.label.setText("")
-
-
+        self.var_3.setText("")
+        self.var_3.setStyleSheet("QLabel {color : white; }")
+        self.var_3.move(300, 100)
+        '''
     def check(self):
         with open('connect.txt', 'r', encoding='utf8') as f:
             text = [str(i) for i in f.read().split('|')]
 
+        print(text)
         if text[-1]:
-            fileName = get_path(int(text[0]))
+            fileName = get_path(int(text[-1]))
             self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
             self.mediaPlayer.play()
 

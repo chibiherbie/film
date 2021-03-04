@@ -9,6 +9,7 @@ def write(file):
         res = list(map(str, count()))
         res.append(str(file))
         f.write('|'.join(res))
+    bd.clear()
 
 
 def get_lenght(file_num):
@@ -18,8 +19,11 @@ def get_lenght(file_num):
 
 
 def count():
+    with open('connect2.txt', 'w', encoding='utf8') as f:
+        f.write('start')
+
     data = [i[0] for i in bd.get_info()]
-    bd.clear()
+    print('data:', data)
 
     inf = [data.count(1), data.count(2), data.count(3)]
 
@@ -38,19 +42,23 @@ def count():
 bd = DataBase('data/user.db')
 
 print('идёт фильм')
-write(1)
+write(3)
 print('выбор')
-sleep(get_lenght(1))
+sleep(get_lenght(3))
+# write(2)
+# sleep(get_lenght(2))
 
-# id = count()
-id = 1
+id = count()[0]
+print('id', id)
 if id == 1:
-    write(2)
-    sleep(get_lenght(2))
+    write(6)
+    sleep(get_lenght(6))
     print('бежим направо')
 elif id == 2:
+    write(7)
+    sleep(get_lenght(7))
     print('бежим налево')
-id = 2
+id = count()
 if id == 1:
     print('бежим направо')
 elif id == 2:

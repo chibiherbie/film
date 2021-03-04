@@ -31,5 +31,18 @@ async def said(message: types.Message):
         await message.answer('Вы уже ответили')
 
 
+async def check():
+    while True:
+        with open('connect2.txt', 'r') as f:
+            file = f.read()
+        if file == 'start':
+            info = bd.get_id()
+            print(info)
+            with open('connect2.txt', 'w') as f:
+                f.write('')
+        await asyncio.sleep(1)
+
 if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.create_task(check())
     executor.start_polling(dp, skip_updates=True)
