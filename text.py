@@ -601,7 +601,92 @@ elif id == 2:
                 print('да, неважно')
 write(68)
 sleep(get_lenght(68))
-print('мама это святое')
+id = count()[0]
+if id == 1:
+    write(71)
+    sleep(get_lenght(71))
+    print('взять трубку')
+    id = count()[0]
+    if id == 1:
+        write(73)
+        sleep(get_lenght(73))
+        print('исследовать территория, где была сделка')
+    elif id == 2:
+        write(72)
+        sleep(get_lenght(72))
+        print('исследовать территорию вокруг')
+    elif id == 3:
+        write(74)
+        sleep(get_lenght(74))
+        print('позвноить одному из друзей')
+elif id == 2:
+    write(70)
+    sleep(get_lenght(70))
+    print('сбросить')
+elif id == 3:
+    write(69)
+    sleep(get_lenght(69))
+    print('проигнорить')
+write(76)
+sleep(get_lenght(76))
+id = count()[0]
+if id == 1:
+    write(77)
+    sleep(get_lenght(77))
+    print('рассказать правду')
+elif id == 2:
+    write(78)
+    sleep(get_lenght(78))
+    print('солгать')
+elif id == 3:
+    write(79)
+    sleep(get_lenght(79))
+    print('промолчать')
+write(80)
+sleep(get_lenght(80))
+id = count()[0]
+if id == 1:
+    write(81)
+    sleep(get_lenght(81))
+    print('начать рассказывать ')
+    id = count()[0]
+    if id == 1:
+        write(82)
+        sleep(get_lenght(82))
+        print('сказать правду про девушку')
+    elif id == 2:
+        write(83)
+        sleep(get_lenght(83))
+        print('сказать что звонил диспетчер')
+elif id == 2:
+    write(84)
+    sleep(get_lenght(84))
+    print('начать говорить про ложь')
+    id = count()[0]
+    if id == 1:
+        write(85)
+        sleep(get_lenght(85))
+        print('давить  на жалость')
+    elif id == 2:
+        write(86)
+        sleep(get_lenght(86))
+        print('начать обвинять босса')
+# конец
+write(87)
+sleep(get_lenght(87))
+id = count()[0]
+if id == 1:
+    write(n)
+    sleep(get_lenght(n))
+    print('толя')
+elif id == 2:
+    write(n)
+    sleep(get_lenght(n))
+    print('чулок')
+elif id == 3:
+    write(n)
+    sleep(get_lenght(n))
+    print('босс')
 '''struct
 id = count()[0]
 if id == 1:
