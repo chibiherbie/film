@@ -454,7 +454,154 @@ elif id == 3:
 write(47)
 sleep(get_lenght(47))
 #диалог с мамой
-
+write(48)
+sleep(get_lenght(48))
+id = count()[0]
+if id == 1:
+    write(51)
+    sleep(get_lenght(51))
+    print('ответить все хорошо')
+    id = count()[0]
+    if id == 1:
+        write(52)
+        sleep(get_lenght(52))
+        print('еду с друзьями на тусовку')
+        id = count()[0]
+        if id == 1:
+            write(53)
+            sleep(get_lenght(53))
+            print('еще бы, самую лучшую')
+        elif id == 2:
+            write(54)
+            sleep(get_lenght(54))
+            print('да не мам, какая невестка')
+        elif id == 3:
+            write(55)
+            sleep(get_lenght(55))
+            print('мааам')
+    elif id == 2:
+        write(61)
+        sleep(get_lenght(61))
+        print('да, неважно')
+elif id == 2:
+    write(49)
+    sleep(get_lenght(49))
+    print('промолчать')
+    write(50)
+    sleep(get_lenght(50))
+    print('ну возьми ты это же мама')
+    id = count()[0]
+    if id == 1:
+        write(51)
+        sleep(get_lenght(51))
+        print('привет мамуль')
+        id = count()[0]
+        if id == 1:
+            write(52)
+            sleep(get_lenght(52))
+            print('еду с друзьями на тусовку')
+            id = count()[0]
+            if id == 1:
+                write(53)
+                sleep(get_lenght(53))
+                print('еще бы, самую лучшую')
+            elif id == 2:
+                write(54)
+                sleep(get_lenght(54))
+                print('да не мам, какая невестка')
+            elif id == 3:
+                write(55)
+                sleep(get_lenght(55))
+                print('мааам')
+        elif id == 2:
+            write(61)
+            sleep(get_lenght(61))
+            print('да, неважно')
+    elif id == 2:
+        write(56)
+        sleep(get_lenght(56))
+        print('я супер, еду сейчас забирать оружие')
+        id = count()[0]
+        if id == 1:
+            write(57)
+            sleep(get_lenght(57))
+            print('да это безопасно')
+        elif id == 2:
+            write(58)
+            sleep(get_lenght(58))
+            print('не, это не то о чем ты подумала')
+        elif id == 3:
+            write(59)
+            sleep(get_lenght(59))
+            print('я не хочу слышать нотации')
+    elif id == 3:
+        write(62)
+        sleep(get_lenght(62))
+        print('нормально')
+        id = count()[0]
+        if id == 1:
+            write(63)
+            sleep(get_lenght(63))
+            print('да ничего давай пока')
+        elif id == 2:
+            write(64)
+            sleep(get_lenght(64))
+            print('все хорошо просто много работаю')
+            id = count()[0]
+            if id == 1:
+                write(65)
+                sleep(get_lenght(65))
+                print('да тут работа такая, курьерска')
+            elif id == 2:
+                write(66)
+                sleep(get_lenght(66))
+                print('этого тебе знать не стоит')
+            elif id == 3:
+                write(67)
+                sleep(get_lenght(67))
+                print('в банде')
+                id = count()[0]
+                if id == 1:
+                    write(57)
+                    sleep(get_lenght(57))
+                    print('да это безопасно')
+                elif id == 2:
+                    write(58)
+                    sleep(get_lenght(58))
+                    print('не, это не то о чем ты подумала')
+                elif id == 3:
+                    write(59)
+                    sleep(get_lenght(59))
+                    print('я не хочу слышать нотации')
+        elif id == 3:
+            write(60)
+            sleep(get_lenght(60))
+            print('да нет все хорошо лучше расскажи как у тебя дела')
+            id = count()[0]
+            if id == 1:
+                write(52)
+                sleep(get_lenght(52))
+                print('еду с друзьями на тусовку')
+                id = count()[0]
+                if id == 1:
+                    write(53)
+                    sleep(get_lenght(53))
+                    print('еще бы, самую лучшую')
+                elif id == 2:
+                    write(54)
+                    sleep(get_lenght(54))
+                    print('да не мам, какая невестка')
+                elif id == 3:
+                    write(55)
+                    sleep(get_lenght(55))
+                    print('мааам')
+            elif id == 2:
+                write(61)
+                sleep(get_lenght(61))
+                print('да, неважно')
+write(68)
+sleep(get_lenght(68))
+print('мама это святое')
 '''struct
 id = count()[0]
 if id == 1:
