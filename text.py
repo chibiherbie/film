@@ -9,10 +9,12 @@ def write(file):
         res = list(map(str, count()))
         res.append(str(file))
         f.write('|'.join(res))
-        with open('connect2.txt', 'w', encoding='utf8') as f2:
-            f2.write('|'.join(res)) # записываем в коннект 2 и пусть от туда проверяет бот
-    bd.clear()
-
+        print(res)
+        if res[1] != '0' or res[2] != '0' or res[3] != '0':
+            with open('connect2.txt', 'w', encoding='utf8') as f2:
+                f2.write('|'.join(res))  # записываем в коннект 2 и пусть от туда проверяет бот
+        else:
+            bd.clear()
 
 def get_lenght(file_num):
     file = f'data/video/{file_num}.mp4'
@@ -21,9 +23,6 @@ def get_lenght(file_num):
 
 
 def count():
-    with open('connect2.txt', 'w', encoding='utf8') as f:
-        f.write('start')
-
     data = [i[0] for i in bd.get_info()]
     print('data:', data)
 
@@ -44,9 +43,9 @@ def count():
 bd = DataBase('data/user.db')
 
 print('идёт фильм')
-write(1)
+write(2)
 print('выбор')
-sleep(get_lenght(1))
+sleep(get_lenght(2))
 write(2)
 sleep(get_lenght(2))
 #вход в кабинет

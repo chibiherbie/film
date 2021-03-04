@@ -22,5 +22,4 @@ class DataBase:
         return self.cur.execute('''SELECT choice FROM game''').fetchall()
 
     def get_id(self):
-        print(self.cur.execute('''SELECT id_user FROM game''').fetchall())
         return self.cur.execute('''SELECT id_user FROM game''').fetchall()

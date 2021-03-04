@@ -57,7 +57,6 @@ class VideoPlayer(QWidget):
         with open('connect.txt', 'r', encoding='utf8') as f:
             text = [str(i) for i in f.read().split('|')]
 
-        print(text)
         if text[-1]:
             fileName = get_path(int(text[-1]))
             self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(fileName)))
