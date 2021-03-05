@@ -16,12 +16,7 @@ def write(file):
                 f2.write('|'.join(res))  # записываем в коннект 2 и пусть от туда проверяет бот
         else:
             bd.clear()
-'''
-def get_lenght(file_num):
-    file = f'data/video/{file_num}.mp4'
-    clip = VideoFileClip(file)
-    return clip.duration
-'''
+
 
 def count():
     data = [i[0] for i in bd.get_info()]
@@ -675,19 +670,20 @@ elif id == 2:
 write(87)
 sleep(get_lenght(87))
 id = count()[0]
+
 if id == 1:
-    write(n)
-    sleep(get_lenght(n))
+    write(91)
+    sleep(get_lenght(91))
     print('толя')
 elif id == 2:
-    write(n)
-    sleep(get_lenght(n))
+    write(91)
+    sleep(get_lenght(91))
     print('чулок')
 elif id == 3:
-    write(n)
-    sleep(get_lenght(n))
+    write(88)
+    sleep(get_lenght(88))
     print('босс')
-'''struct
+'''
 id = count()[0]
 if id == 1:
     write(n)
